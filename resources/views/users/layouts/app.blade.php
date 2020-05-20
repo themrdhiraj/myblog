@@ -46,9 +46,9 @@
 
 	
      
-	 <!-- Preloader Start -->
+   <!-- Preloader Start -->
      <div class="preloader">
-	   <div class="rounder"></div>
+     <div class="rounder"></div>
       </div>
       <!-- Preloader End -->
       
@@ -58,51 +58,32 @@
     <div id="main">
         <div class="container">
             <div class="row">
-              @include('users.inc.aboutme')
+              
+               
+                 
+                 @include('users.inc.aboutme')
+                
+                
+                
+                
+                 
                  <!-- Blog Post (Right Sidebar) Start -->
                  <div class="col-md-9">
                     <div class="col-md-12 page-body">
-                    	<div class="row">
-                    		
-                            
-                            <div class="sub-title">
-                           		<h2>My Blog</h2>
-                                <a href="contact.html"><i class="icon-envelope"></i></a>
-                             </div>
-                            
-                            
-                            @yield('content')
+                      <div class="row">
+                        
+                        @yield('content')
                               
                          </div>
                          
                         
                         
-                        @include('users.inc.sub')
+                        @include('users.inc.subscribe')
                            
                          </div>
                      
                      
-                       <!-- Footer Start -->
-                       <div class="col-md-12 page-body margin-top-50 footer">
-                          <footer>
-                          <ul class="menu-link">
-                               <li><a href="index.html">Home</a></li>
-                               <li><a href="about.html">About</a></li>
-                               <li><a href="work.html">Work</a></li>
-                               <li><a href="contact.html">Contact</a></li>
-                            </ul>
-                            
-                          <p>© Copyright 2016 DevBlog. All rights reserved</p>
-						  
-						  
-						  <!-- UiPasta Credit Start -->
-                          <div class="uipasta-credit">Design By <a href="http://www.uipasta.com" target="_blank">UiPasta</a></div>
-                          <!-- UiPasta Credit End -->
-
-                           
-                         </footer>
-                       </div>
-                       <!-- Footer End -->
+                       @include('users.inc.footer')
                      
                      
                   </div>
