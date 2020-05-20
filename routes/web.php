@@ -17,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+
+//Admin routes
+Route::get('/dashboard', 'AdminController@index');
+
+//Users routes
 Route::get('/', 'UserController@index');
 Route::get('/about', 'UserController@about');
 Route::get('/single', 'UserController@single');
