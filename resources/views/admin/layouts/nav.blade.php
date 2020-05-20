@@ -30,8 +30,8 @@
           <a href="#"><i class="fa fa-book"></i>
             <span>Blog <i class="lnr lnr-chevron-right"></i></span></a>
           <ul class="sub-menu-list">
-            <li><a href="carousels.html">All posts</a> </li>
-            <li><a href="cards.html">Add posts</a> </li>
+            <li><a href="/posts">All posts</a> </li>
+            <li><a href="/posts/create">Add posts</a> </li>
           </ul>
         </li>
         

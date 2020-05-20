@@ -21,6 +21,10 @@ use Illuminate\Support\Facades\Route;
 //Admin routes
 Route::get('/dashboard', 'AdminController@index');
 
+//Posts routes
+
+Route::resource('posts','PostsController');
+
 //Users routes
 Route::get('/', 'UserController@index');
 Route::get('/about', 'UserController@about');

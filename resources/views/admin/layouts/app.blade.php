@@ -8,7 +8,7 @@ Author URL: http://w3layouts.com
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Collective Admin Panel a Flat Bootstrap Responsive Website Template | Home :: W3Layouts</title>
+    <title>Admin</title>
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('adminPanel/css/style-starter.css') }}">
     <!-- google fonts -->
@@ -157,6 +157,7 @@ Author URL: http://w3layouts.com
                   <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                 </ol>
               </nav>
+              @include('admin.layouts.messages')
               @yield('content')
             </div>
             <!-- //content -->
