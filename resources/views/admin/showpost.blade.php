@@ -18,13 +18,22 @@
                                 @foreach($posts as $post)
                                 <tr>
                                     <td>{{$post->title}}</td>
-                                    <td><a href="/posts/{{ $post->id }}/edit" class="btn btn-warning">Edit</a></td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a href="/posts/{{ $post->id }}/edit" class="btn btn-warning">Edit</a>
+                                        {!! Form::open(['action' => ['PostsController@destroy', $post->id ],'method' => 'POST',]) !!}
+                                            {{Form::hidden('_method', 'DELETE')}}
+                                            {{Form::submit('Delete',['class' => 'btn btn-danger'])}}
+                                        {!! Form::close() !!}
+                                        </div>
+                                    </td>
                                 </tr>
                                 @endforeach
                             @else
                             <td colspan="3">No posts Found</td>
                             @endif
                     </table>
+                    {{$posts->links()}}
                 </div>
             </div>
             <!-- //forms 1 -->

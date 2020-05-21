@@ -15,7 +15,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::orderBy('id', 'desc')->paginate(5);
         return view('admin.showpost')->with('posts', $posts);
     }
 
@@ -108,6 +108,17 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+
+        //Check for user id
+        // if (auth()->user()->id !== $post->user_id) {
+        //     return redirect('/posts')->with('error', 'Unauthorized page');
+        // }
+
+        // if ($post->cover_image != 'noimage.jpg') {
+        //     Storage::delete('public/cover_images/'.$post->cover_image);
+        // }
+        $post->delete();
+        return redirect('/posts')->with('success', 'Post "'.$post->title. '"" Deleted!!!');
     }
 }
