@@ -17,6 +17,11 @@
                             {{Form::label('body','Content',['class' => 'input__label'])}}
                             {{Form::textarea('body','',['class' => 'form-control input-style', 'placeholder' => 'Content'])}}
                         </div>
+
+                        <div class="form-group">
+                            {{Form::file('cover_image')}}
+                        </div>
+
                         {{Form::submit('Submit',['class' => 'btn btn-primary btn-style mt-4'])}}
                     {!! Form::close() !!}
                 </div>

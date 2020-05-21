@@ -9,14 +9,21 @@
                 </div>
                 <div class="card-body">
                    {!! Form::open(['action' => ['PostsController@update',$post->id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
+
                         <div class="form-group">
                             {{Form::label('title','Title',['class' => 'input__label'])}}
                             {{Form::text('title',$post->title,['class' => 'form-control input-style', 'placeholder' => 'Title'])}}
                         </div>
+
                         <div class="form-group">
                             {{Form::label('body','Content',['class' => 'input__label'])}}
                             {{Form::textarea('body',$post->body,['class' => 'form-control input-style', 'placeholder' => 'Content'])}}
                         </div>
+
+                        <div class="form-group">
+                            {{Form::file('cover_image')}}
+                        </div>
+
                         {{Form::hidden('_method', 'PUT')}}
                         {{Form::submit('Submit',['class' => 'btn btn-primary btn-style mt-4'])}}
                     {!! Form::close() !!}
