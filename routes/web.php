@@ -28,7 +28,7 @@ Route::resource('posts','PostsController');
 //Users routes
 Route::get('/', 'UserController@index');
 Route::get('/about', 'UserController@about');
-Route::get('/single', 'UserController@single');
+Route::get('/single/{id}', 'UserController@single');
 Route::get('/contact', 'UserController@contact');
 Route::get('/work', 'UserController@work');
 

@@ -19,7 +19,7 @@
     <div class="my-detail">
       
       <div class="white-spacing">
-        <h1>Dhiraj Shrestha</h1>
+        <h1>{{$user ?? ''->name}}</h1>
         <span>Web Developer</span>
       </div>
       

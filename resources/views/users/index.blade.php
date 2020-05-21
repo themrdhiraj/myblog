@@ -1,122 +1,35 @@
 @extends('users.layouts.app')
 @section('content')
 <div class="sub-title">
-                              <h2>My Blog</h2>
-                                <a href="/contact"><i class="icon-envelope"></i></a>
-                             </div>
+  <h2>My Blog</h2>
+  <a href="/contact"><i class="icon-envelope"></i></a>
+</div>
 <div class="col-md-12 content-page">
-  
-  
-  <!-- Blog Post Start -->
-  <div class="col-md-12 blog-post">
-    <div class="post-title">
-      <a href="/single"><h1>How to make your company website based on bootstrap framework on localhost?</h1></a>
-    </div>
-    <div class="post-info">
-      <span>November 23, 2016 / by <a href="#" target="_blank">Alex Parker</a></span>
-    </div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique temporibus tempora dicta soluta? Qui hic, voluptatem nemo quo corporis dignissimos voluptatum debitis cumque fugiat mollitia quasi quod. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique.</p>
-    <a href="single" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>
-  </div>
-  <!-- Blog Post End -->
-  
-  
-  
-  <!-- Blog Post Start -->
-  <div class="col-md-12 blog-post">
-    <div class="post-title">
-      <a href="/single"><h1>How to design elegant e-mail newsletter in html for wish christmas to your subscribers?</h1></a>
-    </div>
-    <div class="post-info">
-      <span>November 23, 2016 / by <a href="#" target="_blank">Alex Parker</a></span>
-    </div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique temporibus tempora dicta soluta? Qui hic, voluptatem nemo quo corporis dignissimos voluptatum debitis cumque fugiat mollitia quasi quod. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique.</p>
-    <a href="/single" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>
-  </div>
-  <!-- Blog Post End -->
-  
-  
-  
-  <!-- Blog Post Start -->
+
+  @if(count ($posts) > 0)
+    @foreach($posts as $post)
+    <!-- Blog Post Start -->
   <div class="col-md-12 blog-post">
     <div class="post-image">
-      <img src="images/blog/1.jpg" alt="">
+      <img style="width:100%" src="/storage/cover_images/{{$post->cover_image}}" alt="">
     </div>
     <div class="post-title">
-      <a href="/single"><h1>Make mailchimp singup form working with ajax using jquery plugin</h1></a>
+      <a href="/single"><h1>{{ $post->title }}</h1></a>
     </div>
     <div class="post-info">
-      <span>November 23, 2016 / by <a href="#" target="_blank">Alex Parker</a></span>
+      <span>{{ $post->created_at }} / by <a href="#" target="_blank">{{$user->name}}</a></span>
     </div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique temporibus tempora dicta soluta? Qui hic, voluptatem nemo quo corporis dignissimos voluptatum debitis cumque fugiat mollitia quasi quod. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique.</p>
-    <a href="/single" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>
+    <p>{{ $post->body }}</p>
+    <a href="/single/{{$post->id}}" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>
   </div>
   <!-- Blog Post End -->
-  
-  
-  
-  <!-- Blog Post Start -->
+  @endforeach
+  @else
   <div class="col-md-12 blog-post">
-    <div class="post-title">
-      <a href="/single"><h1>Develop a custom wordpress membership plugin from scratch using framework on localhost - part 1</h1></a>
-    </div>
-    <div class="post-info">
-      <span>November 23, 2016 / by <a href="#" target="_blank">Alex Parker</a></span>
-    </div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique temporibus tempora dicta soluta? Qui hic, voluptatem nemo quo corporis dignissimos voluptatum debitis cumque fugiat mollitia quasi quod. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique.</p>
-    <a href="/single" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>
+    No post yet...
   </div>
-  <!-- Blog Post End -->
-  
-  
-  
-  <!-- Blog Post Start -->
-  <div class="col-md-12 blog-post">
-    <div class="post-title">
-      <a href="/single"><h1>How to customize a wordpress theme entirely from scratch using a child theme?</h1></a>
-    </div>
-    <div class="post-info">
-      <span>November 23, 2016 / by <a href="#" target="_blank">Alex Parker</a></span>
-    </div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique temporibus tempora dicta soluta? Qui hic, voluptatem nemo quo corporis dignissimos voluptatum debitis cumque fugiat mollitia quasi quod. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique.</p>
-    <a href="/single" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>
-  </div>
-  <!-- Blog Post End -->
-  
-  
-  
-  <!-- Blog Post Start -->
-  <div class="col-md-12 blog-post">
-    <div class="post-image">
-      <img src="images/blog/2.jpg" alt="">
-    </div>
-    <div class="post-title">
-      <a href="/single"><h1>What makes wordpress a unique and highly customizable platform from competitors?</h1></a>
-    </div>
-    <div class="post-info">
-      <span>November 23, 2016 / by <a href="#" target="_blank">Alex Parker</a></span>
-    </div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique temporibus tempora dicta soluta? Qui hic, voluptatem nemo quo corporis dignissimos voluptatum debitis cumque fugiat mollitia quasi quod. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique.</p>
-    <a href="/single" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>
-  </div>
-  <!-- Blog Post End -->
-  
-  
-  
-  <!-- Blog Post Start -->
-  <div class="col-md-12 blog-post">
-    <div class="post-title">
-      <a href="/single"><h1>What mistakes every beginner make, when they make website using bootstrap?</h1></a>
-    </div>
-    <div class="post-info">
-      <span>November 23, 2016 / by <a href="#" target="_blank">Alex Parker</a></span>
-    </div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique temporibus tempora dicta soluta? Qui hic, voluptatem nemo quo corporis dignissimos voluptatum debitis cumque fugiat mollitia quasi quod. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae ut ratione similique.</p>
-    <a href="/single" class="button button-style button-anim fa fa-long-arrow-right"><span>Read More</span></a>
-  </div>
-  <!-- Blog Post End -->
-  
-  
+  @endif
+
   <div class="col-md-12 text-center">
     <a href="javascript:void(0)" id="load-more-post" class="load-more-button">Load</a>
     <div id="post-end-message"></div>
