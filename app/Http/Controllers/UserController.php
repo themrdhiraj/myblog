@@ -9,43 +9,58 @@ use DB;
 
 class UserController extends Controller
 {
-
     public function index()
     {
         $posts = Post::orderBy('id', 'desc')->get();
-        $name = User::find(1);
+
+        $user = User::get('name')->first();
 
         $data = array(
             'posts' => $posts,
-            'user' => $name
+            'user' =>$user
         );
     	return view('users.index')->with($data);
     }
 
     public function about()
     {
-    	return view('users.about');
+        $user = User::get('name')->first();
+
+        $data = array(
+            'user' =>$user
+        );
+        return view('users.about')->with($data);
     }
 
     public function contact()
     {
-    	return view('users.contact');
+    	$user = User::get('name')->first();
+
+        $data = array(
+            'user' =>$user
+        );
+        return view('users.contact')->with($data);
     }
 
     public function single($id)
     {
         $post = Post::find($id);
-        $name = User::find($post->user_id);
+        $user = User::get('name')->first();
 
         $data = array(
             'post' => $post,
-            'user' => $name
+            'user' =>$user
         );
     	return view('users.single')->with($data);
     }
 
     public function work()
     {
-    	return view('users.work');
+    	$user = User::get('name')->first();
+
+        $data = array(
+            'user' =>$user
+        );
+        return view('users.work')->with($data);
     }
 }

@@ -3,7 +3,7 @@
   <div class="about-fixed">
     
     <div class="my-pic">
-      <img src="{{ asset('assets/images/pic/my-pic.png') }}" alt="">
+      <img src="{{ asset('assets/images/pic/profile.jpeg') }}" alt="">
       <a href="javascript:void(0)" class="collapsed" data-target="#menu" data-toggle="collapse"><i class="icon-menu menu"></i></a>
       <div id="menu" class="collapse">
         <ul class="menu-link">
@@ -19,7 +19,7 @@
     <div class="my-detail">
       
       <div class="white-spacing">
-        <h1>{{$user ?? ''->name}}</h1>
+        <h1>{{$user->name}}</h1>
         <span>Web Developer</span>
       </div>
       
