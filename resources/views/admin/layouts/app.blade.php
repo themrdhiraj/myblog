@@ -129,103 +129,111 @@ Author URL: http://w3layouts.com
                         </a>
                         <ul class="dropdown-menu drp-mnu" aria-labelledby="dropdownMenu3">
                           <li class="user-info">
-                            <h5 class="user-name">John Deo</h5>
+                            <h5 class="user-name">{{ Auth::user()->name }}</h5>
                             <span class="status ml-2">Available</span>
                           </li>
                           <li> <a href="#"><i class="lnr lnr-user"></i>My Profile</a> </li>
                           <li> <a href="#"><i class="lnr lnr-users"></i>1k Followers</a> </li>
                           <li> <a href="#"><i class="lnr lnr-cog"></i>Setting</a> </li>
                           <li> <a href="#"><i class="lnr lnr-heart"></i>100 Likes</a> </li>
-                          <li class="logout"> <a href="#sign-up.html"><i class="fa fa-power-off"></i> Logout</a> </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </div>
+                          <li class="logout"> <a href="{{ route('logout') }}" 
+                            onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            <i class="fa fa-power-off"></i> Logout</a>
+                            <!-- Denote the post method -->
+                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                          </form>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
-            <!--notification menu end -->
           </div>
-          <!-- //header-ends -->
-          <!-- main content start -->
-          <div class="main-content">
-            <!-- content -->
-            <div class="container-fluid content-top-gap">
-              <nav aria-label="breadcrumb">
-                <ol class="breadcrumb my-breadcrumb">
-                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                </ol>
-              </nav>
-              @include('admin.layouts.messages')
-              @yield('content')
-            </div>
-            <!-- //content -->
+          <!--notification menu end -->
+        </div>
+        <!-- //header-ends -->
+        <!-- main content start -->
+        <div class="main-content">
+          <!-- content -->
+          <div class="container-fluid content-top-gap">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb my-breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+              </ol>
+            </nav>
+            @include('admin.layouts.messages')
+            @yield('content')
           </div>
-          <!-- main content end-->
-        </section>
-        @include('admin.layouts.footer')
-        <script>
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function () {
-        scrollFunction()
-        };
-        function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        document.getElementById("movetop").style.display = "block";
-        } else {
-        document.getElementById("movetop").style.display = "none";
-        }
-        }
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-        }
-        </script>
-        <!-- /move top -->
-        <script src="{{ asset('adminPanel/js/jquery-3.3.1.min.js') }}"></script>
-        <script src="{{ asset('adminPanel/js/jquery-1.10.2.min.js') }}"></script>
-        <!-- chart js -->
-        <script src="{{ asset('adminPanel/js/Chart.min.js') }}"></script>
-        <script src="{{ asset('adminPanel/js/utils.js') }}"></script>
-        <!-- //chart js -->
-        <!-- Different scripts of charts.  Ex.Barchart, Linechart -->
-        <script src="{{ asset('adminPanel/js/bar.js') }}"></script>
-        <script src="{{ asset('adminPanel/js/linechart.js')}}"></script>
-        <!-- //Different scripts of charts.  Ex.Barchart, Linechart -->
-        <script src="{{ asset('adminPanel/js/jquery.nicescroll.js') }}"></script>
-        <script src="{{ asset('adminPanel/js/scripts.js')}}"></script>
-        <!-- close script -->
-        <script>
-        var closebtns = document.getElementsByClassName("close-grid");
-        var i;
-        for (i = 0; i < closebtns.length; i++) {
-        closebtns[i].addEventListener("click", function () {
-        this.parentElement.style.display = 'none';
-        });
-        }
-        </script>
-        <!-- //close script -->
-        <!-- disable body scroll when navbar is in active -->
-        <script>
-        $(function () {
-        $('.sidebar-menu-collapsed').click(function () {
-        $('body').toggleClass('noscroll');
-        })
-        });
-        </script>
-        <!-- disable body scroll when navbar is in active -->
-        <!-- loading-gif Js -->
-        <script src="{{ asset('adminPanel/js/modernizr.js') }}"></script>
-        <script>
-        $(window).load(function () {
-        // Animate loader off screen
-        $(".se-pre-con").fadeOut("slow");;
-        });
-        </script>
-        <!--// loading-gif Js -->
-        <!-- Bootstrap Core JavaScript -->
-        <script src="{{ asset('adminPanel/js/bootstrap.min.js') }}"></script>
-      </body>
-    </html>
+          <!-- //content -->
+        </div>
+        <!-- main content end-->
+      </section>
+      @include('admin.layouts.footer')
+      <script>
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function () {
+      scrollFunction()
+      };
+      function scrollFunction() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("movetop").style.display = "block";
+      } else {
+      document.getElementById("movetop").style.display = "none";
+      }
+      }
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+      }
+      </script>
+      <!-- /move top -->
+      <script src="{{ asset('adminPanel/js/jquery-3.3.1.min.js') }}"></script>
+      <script src="{{ asset('adminPanel/js/jquery-1.10.2.min.js') }}"></script>
+      <!-- chart js -->
+      <script src="{{ asset('adminPanel/js/Chart.min.js') }}"></script>
+      <script src="{{ asset('adminPanel/js/utils.js') }}"></script>
+      <!-- //chart js -->
+      <!-- Different scripts of charts.  Ex.Barchart, Linechart -->
+      <script src="{{ asset('adminPanel/js/bar.js') }}"></script>
+      <script src="{{ asset('adminPanel/js/linechart.js')}}"></script>
+      <!-- //Different scripts of charts.  Ex.Barchart, Linechart -->
+      <script src="{{ asset('adminPanel/js/jquery.nicescroll.js') }}"></script>
+      <script src="{{ asset('adminPanel/js/scripts.js')}}"></script>
+      <!-- close script -->
+      <script>
+      var closebtns = document.getElementsByClassName("close-grid");
+      var i;
+      for (i = 0; i < closebtns.length; i++) {
+      closebtns[i].addEventListener("click", function () {
+      this.parentElement.style.display = 'none';
+      });
+      }
+      </script>
+      <!-- //close script -->
+      <!-- disable body scroll when navbar is in active -->
+      <script>
+      $(function () {
+      $('.sidebar-menu-collapsed').click(function () {
+      $('body').toggleClass('noscroll');
+      })
+      });
+      </script>
+      <!-- disable body scroll when navbar is in active -->
+      <!-- loading-gif Js -->
+      <script src="{{ asset('adminPanel/js/modernizr.js') }}"></script>
+      <script>
+      $(window).load(function () {
+      // Animate loader off screen
+      $(".se-pre-con").fadeOut("slow");;
+      });
+      </script>
+      <!--// loading-gif Js -->
+      <!-- Bootstrap Core JavaScript -->
+      <script src="{{ asset('adminPanel/js/bootstrap.min.js') }}"></script>
+    </body>
+  </html>

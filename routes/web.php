@@ -31,3 +31,7 @@ Route::get('/about', 'UserController@about');
 Route::get('/single', 'UserController@single');
 Route::get('/contact', 'UserController@contact');
 Route::get('/work', 'UserController@work');
+
+Auth::routes();
+
+Route::get('/home', 'AdminController@index');

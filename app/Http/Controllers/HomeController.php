@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class HomeController extends Controller
 {
-
-	/**
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -16,9 +15,14 @@ class AdminController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
     public function index()
     {
-    	return view('admin.dashboard');
+        return view('home');
     }
 }

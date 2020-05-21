@@ -8,6 +8,19 @@ use DB;
 
 class PostsController extends Controller
 {
+
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth',['error' => 'Login first']);
+    }
+
+
     /**
      * Display a listing of the resource.
      *
@@ -46,6 +59,7 @@ class PostsController extends Controller
         $post = new Post;
         $post->title = $request->input('title');
         $post->body = $request->input('body');
+        $post->user_id = auth()->user()->id;
 
         $post->save();
 
