@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
+use App\Work;
 use DB;
 
 class UserController extends Controller
@@ -61,9 +62,11 @@ class UserController extends Controller
     public function work()
     {
     	$user = User::get()->first();
+        $work = Work::all();
 
         $data = array(
-            'user' =>$user
+            'user' =>$user,
+            'works' =>$work
         );
         return view('users.work')->with($data);
     }

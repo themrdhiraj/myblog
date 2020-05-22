@@ -36,9 +36,10 @@
                                 {{Form::label('profile_github','Github',['class' => 'input__label'])}}
                                 {{Form::text('profile_github',$user->profile_github,['class' => 'form-control input-style', 'placeholder' => 'Github'])}}
                             </div>
-                            <div class="form-group">
-                                {{Form::file('profile_image')}}
-                            </div>
+                            <div class="custom-file">
+                            {{Form::file('profile_image',['class' => 'custom-file-input'])}}
+                            {{Form::label('profile_image','',['class' => 'custom-file-label'])}}
+                        </div>
                             <input type="hidden" name="user_id" value="{{$user->id}}">
                             {{Form::hidden('_method', 'GET')}}
                             {{Form::submit('Update',['class' => 'btn btn-primary btn-style mt-4'])}}

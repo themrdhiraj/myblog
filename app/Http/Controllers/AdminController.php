@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\User;
+use App\Work;
 
 class AdminController extends Controller
 {
@@ -113,6 +114,95 @@ class AdminController extends Controller
             return redirect('/aboutme')->with('success', 'About information updated successfully!');
         }else{
             return redirect('/aboutme')->with('error', 'About information not updated!');
+        }
+    }
+
+
+    public function works()
+    {
+        return view('admin.works');
+    }
+
+
+    public function worksShow()
+    {
+        $projects = Work::orderBy('id', 'desc')->paginate(5);
+        return view('admin.showworks')->with('projects', $projects);
+    }
+
+    public function editWorks($id)
+    {
+        $project = Work::find($id);
+        return view('admin.worksedit')->with('project', $project);
+    }
+
+
+    public function addWorks(Request $request)
+    {
+        $this->validate($request,[
+            'project_name' => 'required',
+            'project_languages' => 'required',
+            'project_time_taken' => 'required',
+            'project_url' => 'required',
+            'project_about' => 'required',
+        ]);
+
+
+        // create posts
+        $project = new Work;
+        $project->project_name = $request->input('project_name');
+        $project->project_languages = $request->input('project_languages');
+        $project->project_time_taken = $request->input('project_time_taken');
+        $project->project_url = $request->input('project_url');
+        $project->project_about = $request->input('project_about');
+
+        $project->save();
+
+        if ($project) {
+            return redirect('/worksShow')->with('success', 'Project added successfully!');
+        }else{
+            return redirect('/works')->with('error', 'Project not added!');
+        }
+    }
+
+    public function updateWorks(Request $request)
+    {
+        $this->validate($request,[
+            'project_name' => 'required',
+            'project_languages' => 'required',
+            'project_time_taken' => 'required',
+            'project_url' => 'required',
+            'project_about' => 'required',
+        ]);
+
+        $id = $request->input('id');
+        // create posts
+        $project = Work::find($id);
+        $project->project_name = $request->input('project_name');
+        $project->project_languages = $request->input('project_languages');
+        $project->project_time_taken = $request->input('project_time_taken');
+        $project->project_url = $request->input('project_url');
+        $project->project_about = $request->input('project_about');
+
+        $project->save();
+
+        if ($project) {
+            return redirect('/worksShow')->with('success', 'Project updated successfully!');
+        }else{
+            return redirect('/works')->with('error', 'Project not updated!');
+        }
+    }
+
+    public function destroyWorks($id)
+    {
+        $project = Work::find($id);
+
+        $success = $project->delete();
+
+        if ($success) {
+            return redirect('/worksShow')->with('success', 'Project deleted successfully!');
+        }else{
+            return redirect('/worksShow')->with('error', 'Project not deleted!');
         }
     }
 }

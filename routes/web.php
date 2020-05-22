@@ -24,6 +24,13 @@ Route::get('/profile', 'AdminController@profile');
 Route::get('/profileUpdate', 'AdminController@profileUpdate');
 Route::get('/aboutme', 'AdminController@aboutme');
 Route::get('/aboutmeUpdate', 'AdminController@aboutmeUpdate');
+Route::get('/works', 'AdminController@works');
+Route::get('/editWorks/{id}', 'AdminController@editWorks');
+Route::get('/worksUpdate', 'AdminController@worksUpdate');
+Route::get('/addWorks', 'AdminController@addWorks');
+Route::get('/updateWorks', 'AdminController@updateWorks');
+Route::get('/worksShow', 'AdminController@worksShow');
+Route::get('/destroyWorks/{id}', 'AdminController@destroyWorks');
 
 //Posts routes
 

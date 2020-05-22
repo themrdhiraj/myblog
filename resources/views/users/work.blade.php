@@ -23,41 +23,50 @@
       <div>
         
         
-        <!-- Portfolio Detail Start -->
+        @if(count ($works) > 0)
+          @foreach($works as $work)
+            <!-- Portfolio Detail Start -->
         <div class="row portfolio">
-          <div class="col-sm-6 custom-pad-1">
-            <img src="{{ asset('assets/images/portfolio/1.jpg') }}" class="img-responsive" alt="">
-          </div>
-          
-          
-          <div class="col-sm-6 custom-pad-2">
+          <div class="col-sm-12 custom-pad-2">
             <div class="table-responsive">
               <table class="table table-bordered">
                 <tbody>
                   
                   <tr>
-                    <td><b>Skills</b></td>
-                    <td>HTML5 / CSS3 / JAVASCRIPT</td>
+                    <td><b>Project name</b></td>
+                    <td>{{$work->project_name}}</td>
                   </tr>
                   
                   <tr>
-                    <td><b>Duration</b></td>
-                    <td>20 Days</td>
+                    <td><b>Language(s) used</b></td>
+                    <td>{{$work->project_languages}}</td>
                   </tr>
                   
                   <tr>
-                    <td><b>Cost</b></td>
-                    <td>$5000</td>
+                    <td><b>Time taken</b></td>
+                    <td>
+                      @if($work->project_time_taken == 0)
+                      Less than a week
+                      @elseif($work->project_time_taken == 1)
+                      One day
+                      @elseif($work->project_time_taken == 2)
+                      Less than a week
+                      @elseif($work->project_time_taken == 3)
+                      A week
+                      @else
+                      Less than a month
+                      @endif
+                    </td>
                   </tr>
                   
                   <tr>
                     <td><b>Url</b></td>
-                    <td><a href="http://www.uipasta.com" title="uipasta">Rolling</a></td>
+                    <td><a href="{{$work->project_url}}" title="uipasta">Click here to visit my project.</a></td>
                   </tr>
                   
                   <tr>
                     <td><b>About Project</b></td>
-                    <td>Lorem ipsum dolor sit amet consectetur adipiscing elit Vivamus feugiat facilisis dignissim Etiam scelerisque ultricies euismod.</td>
+                    <td>{!! $work->project_about !!}</td>
                   </tr>
                 </tbody>
               </table>
@@ -65,144 +74,10 @@
           </div>
         </div>
         <!-- Portfolio Detail End -->
-        
-        
-        
-        <!-- Portfolio Detail Start -->
-        <div class="row portfolio">
-          <div class="col-sm-6 custom-pad-1">
-            <div class="image-carousel">
-              <img src="{{ asset('assets/images/portfolio/2.jpg') }}" class="img-responsive" alt="">
-              <img src="{{ asset('assets/images/portfolio/3.jpg') }}" class="img-responsive" alt="">
-            </div>
-          </div>
-          
-          
-          <div class="col-sm-6 custom-pad-2">
-            <div class="table-responsive">
-              <table class="table table-bordered">
-                <tbody>
-                  
-                  <tr>
-                    <td><b>Skills</b></td>
-                    <td>HTML5 / CSS3 / JAVASCRIPT</td>
-                  </tr>
-                  
-                  <tr>
-                    <td><b>Duration</b></td>
-                    <td>20 Days</td>
-                  </tr>
-                  
-                  <tr>
-                    <td><b>Cost</b></td>
-                    <td>$5000</td>
-                  </tr>
-                  
-                  <tr>
-                    <td><b>Url</b></td>
-                    <td><a href="http://www.uipasta.com" title="uipasta">Rolling</a></td>
-                  </tr>
-                  
-                  <tr>
-                    <td><b>About Project</b></td>
-                    <td>Lorem ipsum dolor sit amet consectetur adipiscing elit Vivamus feugiat facilisis dignissim Etiam scelerisque ultricies euismod.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <!-- Portfolio Detail End -->
-        
-        
-        
-        <!-- Portfolio Detail Start -->
-        <div class="row portfolio">
-          <div class="col-sm-6 custom-pad-1">
-            <img src="{{ asset('assets/images/portfolio/4.jpg') }}" class="img-responsive" alt="">
-          </div>
-          
-          
-          <div class="col-sm-6 custom-pad-2">
-            <div class="table-responsive">
-              <table class="table table-bordered">
-                <tbody>
-                  
-                  <tr>
-                    <td><b>Skills</b></td>
-                    <td>HTML5 / CSS3 / JAVASCRIPT</td>
-                  </tr>
-                  
-                  <tr>
-                    <td><b>Duration</b></td>
-                    <td>20 Days</td>
-                  </tr>
-                  
-                  <tr>
-                    <td><b>Cost</b></td>
-                    <td>$5000</td>
-                  </tr>
-                  
-                  <tr>
-                    <td><b>Url</b></td>
-                    <td><a href="http://www.uipasta.com" title="uipasta">Rolling</a></td>
-                  </tr>
-                  
-                  <tr>
-                    <td><b>About Project</b></td>
-                    <td>Lorem ipsum dolor sit amet consectetur adipiscing elit Vivamus feugiat facilisis dignissim Etiam scelerisque ultricies euismod.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <!-- Portfolio Detail End -->
-        
-        
-        
-        <!-- Portfolio Detail Start -->
-        <div class="row portfolio">
-          <div class="col-sm-6 custom-pad-1">
-            <img src="{{ asset('assets/images/portfolio/6.jpg') }}" class="img-responsive" alt="">
-          </div>
-          
-          
-          <div class="col-sm-6 custom-pad-2">
-            <div class="table-responsive">
-              <table class="table table-bordered">
-                <tbody>
-                  
-                  <tr>
-                    <td><b>Skills</b></td>
-                    <td>HTML5 / CSS3 / JAVASCRIPT</td>
-                  </tr>
-                  
-                  <tr>
-                    <td><b>Duration</b></td>
-                    <td>20 Days</td>
-                  </tr>
-                  
-                  <tr>
-                    <td><b>Cost</b></td>
-                    <td>$5000</td>
-                  </tr>
-                  
-                  <tr>
-                    <td><b>Url</b></td>
-                    <td><a href="http://www.uipasta.com" title="uipasta">Rolling</a></td>
-                  </tr>
-                  
-                  <tr>
-                    <td><b>About Project</b></td>
-                    <td>Lorem ipsum dolor sit amet consectetur adipiscing elit Vivamus feugiat facilisis dignissim Etiam scelerisque ultricies euismod.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <!-- Portfolio Detail End -->
+          @endforeach
+        @else
+          No projects done yet!!!
+        @endif
         
       </div>
       <!-- Portfolio End -->

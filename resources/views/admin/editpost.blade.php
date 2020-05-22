@@ -20,8 +20,9 @@
                             {{Form::textarea('body',$post->body,['class' => 'form-control input-style', 'placeholder' => 'Content', 'id' => 'mytextarea'])}}
                         </div>
 
-                        <div class="form-group">
-                            {{Form::file('cover_image')}}
+                        <div class="custom-file">
+                            {{Form::file('cover_image',['class' => 'custom-file-input'])}}
+                            {{Form::label('cover_image','',['class' => 'custom-file-label'])}}
                         </div>
 
                         {{Form::hidden('_method', 'PUT')}}

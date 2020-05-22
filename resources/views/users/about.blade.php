@@ -14,7 +14,7 @@
       <?php $i=1; ?>
       <!-- My Intro Start -->
       <div class="post-title margin-bottom-30">
-        <h1>Hi, I am <span class="main-color">Alex Parker</span></h1>
+        <h1>Hi, I am <span class="main-color">{{$user->nam}}</span></h1>
         
         <ul class="knowledge">
           @foreach($works as $work)

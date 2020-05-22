@@ -34,6 +34,15 @@
             <li><a href="/posts/create">Add posts</a> </li>
           </ul>
         </li>
+
+        <li class="menu-list">
+          <a href="#"><i class="fa fa-briefcase"></i>
+            <span>Projects done <i class="lnr lnr-chevron-right"></i></span></a>
+          <ul class="sub-menu-list">
+            <li><a href="/worksShow">All projects</a> </li>
+            <li><a href="/works">Add new project</a> </li>
+          </ul>
+        </li>
         
         <li><a href="/aboutme"><i class="fa fa-user"></i> <span>About me</span></a></li>
 

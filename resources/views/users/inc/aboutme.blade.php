@@ -27,7 +27,7 @@
         <li><a href="https://facebook.com/{{$user->profile_facebook}}" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a></li>
         <li><a href="https://twitter.com/{{$user->profile_twitter}}" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a></li>
         <li><a href="https://linkedin.com/{{$user->profile_linkedin}}" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="https://gitlab.com/{{$user->profile_github}}" target="_blank" class="github"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://github.com/{{$user->profile_github}}" target="_blank" class="github"><i class="fa fa-github"></i></a></li>
       </ul>
     </div>
   </div>
