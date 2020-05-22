@@ -13,7 +13,7 @@ class UserController extends Controller
     {
         $posts = Post::orderBy('id', 'desc')->get();
 
-        $user = User::get('name')->first();
+        $user = User::get()->first();
 
         $data = array(
             'posts' => $posts,
@@ -24,7 +24,7 @@ class UserController extends Controller
 
     public function about()
     {
-        $user = User::get('name')->first();
+        $user = User::get()->first();
 
         $data = array(
             'user' =>$user
@@ -34,7 +34,7 @@ class UserController extends Controller
 
     public function contact()
     {
-    	$user = User::get('name')->first();
+    	$user = User::get()->first();
 
         $data = array(
             'user' =>$user
@@ -45,7 +45,7 @@ class UserController extends Controller
     public function single($id)
     {
         $post = Post::find($id);
-        $user = User::get('name')->first();
+        $user = User::get()->first();
 
         $data = array(
             'post' => $post,
@@ -56,7 +56,7 @@ class UserController extends Controller
 
     public function work()
     {
-    	$user = User::get('name')->first();
+    	$user = User::get()->first();
 
         $data = array(
             'user' =>$user

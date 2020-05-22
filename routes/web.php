@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 
 //Admin routes
 Route::get('/dashboard', 'AdminController@index');
+Route::get('/profile', 'AdminController@profile');
+Route::get('/profileUpdate', 'AdminController@profileUpdate');
 
 //Posts routes
 
