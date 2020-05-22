@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/dashboard', 'AdminController@index');
 Route::get('/profile', 'AdminController@profile');
 Route::get('/profileUpdate', 'AdminController@profileUpdate');
+Route::get('/aboutme', 'AdminController@aboutme');
+Route::get('/aboutmeUpdate', 'AdminController@aboutmeUpdate');
 
 //Posts routes
 

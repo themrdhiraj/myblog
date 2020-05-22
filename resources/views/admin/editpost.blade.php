@@ -17,7 +17,7 @@
 
                         <div class="form-group">
                             {{Form::label('body','Content',['class' => 'input__label'])}}
-                            {{Form::textarea('body',$post->body,['class' => 'form-control input-style', 'placeholder' => 'Content'])}}
+                            {{Form::textarea('body',$post->body,['class' => 'form-control input-style', 'placeholder' => 'Content', 'id' => 'mytextarea'])}}
                         </div>
 
                         <div class="form-group">

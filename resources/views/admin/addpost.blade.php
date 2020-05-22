@@ -15,7 +15,7 @@
                         </div>
                         <div class="form-group">
                             {{Form::label('body','Content',['class' => 'input__label'])}}
-                            {{Form::textarea('body','',['class' => 'form-control input-style', 'placeholder' => 'Content'])}}
+                            {{Form::textarea('body','',['placeholder' => 'Content','id' => 'mytextarea'])}}
                         </div>
 
                         <div class="form-group">
@@ -27,4 +27,5 @@
                 </div>
             </div>
             <!-- //forms 1 -->
+            
 @endsection

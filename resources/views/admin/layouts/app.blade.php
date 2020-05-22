@@ -13,6 +13,9 @@ Author URL: http://w3layouts.com
     <link rel="stylesheet" href="{{ asset('adminPanel/css/style-starter.css') }}">
     <!-- google fonts -->
     <link href="//fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&display=swap" rel="stylesheet">
+    <!-- Tiny Mce -->
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+
   </head>
   <body class="sidebar-menu-collapsed">
     <div class="se-pre-con"></div>
@@ -232,5 +235,11 @@ Author URL: http://w3layouts.com
       <!--// loading-gif Js -->
       <!-- Bootstrap Core JavaScript -->
       <script src="{{ asset('adminPanel/js/bootstrap.min.js') }}"></script>
+      <!-- Tinymce -->
+      <script type="text/javascript">
+  tinymce.init({
+    selector: '#mytextarea'
+  });
+  </script>
     </body>
   </html>

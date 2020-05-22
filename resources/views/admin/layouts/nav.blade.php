@@ -35,7 +35,7 @@
           </ul>
         </li>
         
-        <!-- <li><a href="pricing.html"><i class="fa fa-table"></i> <span>Others</span></a></li> -->
+        <li><a href="/aboutme"><i class="fa fa-user"></i> <span>About me</span></a></li>
 
       </ul>
       <!-- //sidebar nav end -->

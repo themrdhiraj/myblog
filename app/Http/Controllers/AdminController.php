@@ -86,4 +86,33 @@ class AdminController extends Controller
             return redirect('/profile')->with('error', 'Profile not updated!');
         }
     }
+
+
+    public function aboutme()
+    {
+        $aboutme = User::find(1);
+        return view('admin.aboutme')->with('aboutme', $aboutme);
+    }
+
+    public function aboutmeUpdate(Request $request)
+    {
+       $this->validate($request,[
+            'profile_aboutme' => 'required',
+        ]);
+
+        // update profile
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+        $user->profile_aboutme = $request->input('profile_aboutme');
+        $user->profile_services = $request->input('profile_services');
+        $user->profile_work = $request->input('profile_work');
+
+        $success = $user->save();
+
+        if ($success) {
+            return redirect('/aboutme')->with('success', 'About information updated successfully!');
+        }else{
+            return redirect('/aboutme')->with('error', 'About information not updated!');
+        }
+    }
 }

@@ -25,9 +25,13 @@ class UserController extends Controller
     public function about()
     {
         $user = User::get()->first();
+        $services = explode(',', $user->profile_services);
+        $work = explode(',', $user->profile_work);
 
         $data = array(
-            'user' =>$user
+            'user' =>$user,
+            'works' =>$work,
+            'services' =>$services,
         );
         return view('users.about')->with($data);
     }
